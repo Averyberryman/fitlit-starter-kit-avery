@@ -1,4 +1,4 @@
-export default { users: [
+export default { sampleUsers: [
   {
     "id": 1,
     "name": "Trystan Gorczany",
