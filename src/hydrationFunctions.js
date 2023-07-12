@@ -21,5 +21,12 @@ const getDailyOunces = (userID, date, dataSet) => {
   return 0;
 }};
 
+const getWeeklyOunces = (userID, dataSet) => {
+  const userHydration = dataSet.filter((hydroObj) => hydroObj.userID === userID);
+
+  
+
+  }
+
 export { getDailyOunces };
 export { averageDailyHydration };
