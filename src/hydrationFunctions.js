@@ -6,7 +6,7 @@ const averageDailyHydration = (userID, dataSet) => {
     acc += curr.numOunces;
     return acc;
   }, 0);
-  return totalHydro / userHydration.length;
+  return Math.floor(totalHydro / userHydration.length);
 };
 
 const getDailyOunces = (userID, date, dataSet) => {
@@ -21,5 +21,16 @@ const getDailyOunces = (userID, date, dataSet) => {
   return 0;
 }};
 
+const getWeeklyOunces = (userID, date, dataSet) => {
+  const userHydration = dataSet.filter((hydroObj) => 
+  hydroObj.userID === userID);
+  return userHydration.reduce((acc, curr) => {
+    acc[curr.date] = curr.numOunces
+    return acc
+  }, {})
+
+  }
+
 export { getDailyOunces };
 export { averageDailyHydration };
+export { getWeeklyOunces };
