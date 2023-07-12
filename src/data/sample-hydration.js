@@ -43,7 +43,7 @@ export default { sampleHydrationData: [
     "userID": 3,
     "date": "2023/03/26",
     "numOunces": 63
-  }
+  },
   {
     "userID": 1,
     "date": "2023/03/27",
