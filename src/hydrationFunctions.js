@@ -31,6 +31,7 @@ const getWeeklyOunces = (userID, date, dataSet) => {
 
   }
 
+
 export { getDailyOunces };
 export { averageDailyHydration };
 export { getWeeklyOunces };
