@@ -1,5 +1,11 @@
-// Your fetch requests will live here!
+const APICall = (url) => {
+  const response = fetch(url);
+  return response.then(response => {
+    return response.json();
+  })
+  .catch(err => console.log(err))
+};
 
-
-console.log('I will be a fetch request!')
-
+export {
+  APICall
+};
