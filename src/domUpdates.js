@@ -1,9 +1,9 @@
 //NOTE: Your DOM manipulation will occur in this file
 
 //Here are 2 example functions just to demonstrate one way you can export/import between the two js files. You'll want to delete these once you get your own code going.
-const exampleFunction1 = (person) => {
-  console.log(`oh hi there ${person}`)
-}
+// const exampleFunction1 = (person) => {
+//   console.log(`oh hi there ${person}`)
+// }
 
 // const exampleFunction2 = (person) => {
 //   console.log(`bye now ${person}`)
@@ -30,7 +30,27 @@ const boxes = document.querySelector('.box');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
+let usersData;
+let sleepData;
+let hydrationData;
+let activityData;
 
 // MODIFIERS
 
 // EXPORTS
+export {
+  getRandomUser,
+  averageDailyHydration,
+  getDailyOunces,
+  getWeeklyOunces,
+  averageSteps,
+  userDataElement,
+  welcomeMessage,
+  widgets,
+  boxes,
+  generalInfo,
+  usersData,
+  sleepData,
+  hydrationData,
+  activityData
+}
