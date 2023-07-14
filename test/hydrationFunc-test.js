@@ -3,7 +3,6 @@ import sampleHydration from '../src/data/sample-hydration';
 import { averageDailyHydration } from '../src/hydrationFunctions';
 import { getDailyOunces, getWeeklyOunces } from '../src/hydrationFunctions';
 
-
 describe('average daily hydration', () => {
   const dataSet = sampleHydration.sampleHydrationData;
   const userID = 1
@@ -11,8 +10,6 @@ describe('average daily hydration', () => {
     expect(averageDailyHydration(userID, dataSet)).to.equal(50)
   })
 })
-
-
 
 describe('get user fluid ounces for a specific day', () => {
   const dataSet = sampleHydration.sampleHydrationData;
@@ -30,14 +27,21 @@ describe('get user fluid ounces for a specific day', () => {
 });
 
 describe('getWeeklyOunces', () => {
-  const userID = 1;
-  const dataSet = sampleHydration.sampleHydrationData;
-  const date = "?"
+  it('should return the correct weekly ounces for user 1 ending on the specified date', () => {
+    const userID = 1;
+    const endDate = '2023/03/30';
+    const expectedOutput = {
+      '2023/03/24': 28,
+      '2023/03/25': 50,
+      '2023/03/26': 21,
+      '2023/03/27': 63,
+      '2023/03/28': 97,
+      '2023/03/29': 20,
+      '2023/03/30': 76
+    };
 
-  it('should return a user\'s total fluid ounces over 7 days', () => {
-    expect(getWeeklyOunces(userID, date, dataSet)).to.be.a('object')
-
-  })
-})
-
+    const output = getWeeklyOunces(userID, endDate, sampleHydration.sampleHydrationData);
+    expect(output).to.deep.equal(expectedOutput);
+  });
+});
 

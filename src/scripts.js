@@ -9,21 +9,27 @@
 // import './images/turing-logo.png';
 
 // An example of how you tell webpack to use a JS file
-// import userData from './data/users';
-// console.log("User Data:", userData);
+import { APICall } from "./apiCalls"
 
-// Example of one way to import functions from the domUpdates file.  You will delete these examples.
-// import { exampleFunction1, exampleFunction2 } from './domUpdates';
+let usersData;
+let sleepData;
+let hydrationData;
+let activityData;
 
-// exampleFunction1('Travis');
-// exampleFunction2('Travis')
+const getUsersData = APICall("https://fitlit-api.herokuapp.com/api/v1/users");
+const getSleepData = APICall("https://fitlit-api.herokuapp.com/api/v1/sleep");
+const getHydrationData = APICall("https://fitlit-api.herokuapp.com/api/v1/hydration");
+const getActivityData = APICall("https://fitlit-api.herokuapp.com/api/v1/activity");
 
-// SCRIPTS
-
-// IMPORTS
-
-// FETCHED DATA
-
-// EVENT LISTENERS
-
-// EXPORTS
+const getAllData = () => {
+  Promise.all([getUsersData, getSleepData, getHydrationData, getActivityData])
+  .then((data) => {
+      usersData = data[0];
+      sleepData = data[1];
+      hydrationData = data[2];
+      activityData = data[3];
+      console.log({usersData}, {sleepData}, {hydrationData}, {activityData});
+    }
+  );
+};
+window.addEventListener('load', getAllData);
