@@ -3,3 +3,55 @@ body, html {
   background-repeat: no-repeat;
   height: 100%;
 }
+
+main {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.user-data {
+  border: 1px solid black;
+  height: 300px;
+  flex-direction: row;
+  flex-basis: 300px;
+  text-align: center;
+  border-radius: 30px;
+}
+.widgets {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+}
+
+.box {
+  border: 5px dotted black;
+  height: 425px;
+  width: 200px;
+  text-align: center;
+  margin: 15px;
+  border-radius: 20px;
+
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.general-info {
+  border: 1px solid black;
+  height: 750px;
+  width: 500px;
+  border-radius: 30px;
+  text-align: center;
+}
