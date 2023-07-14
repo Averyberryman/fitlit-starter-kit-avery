@@ -28,8 +28,8 @@ const getAllData = () => {
       sleepData = data[1];
       hydrationData = data[2];
       activityData = data[3];
-      console.log({usersData}, {sleepData}, {hydrationData}, {activityData})
+      console.log({usersData}, {sleepData}, {hydrationData}, {activityData});
     }
-  )
-}
-
+  );
+};
+window.addEventListener('load', getAllData);
