@@ -16,3 +16,8 @@ let sleepData;
 let hydrationData;
 let activityData;
 
+const getUsersData = APICall("https://fitlit-api.herokuapp.com/api/v1/users");
+const getSleepData = APICall("https://fitlit-api.herokuapp.com/api/v1/sleep");
+const getHydrationData = APICall("https://fitlit-api.herokuapp.com/api/v1/hydration");
+const getActivityData = APICall("https://fitlit-api.herokuapp.com/api/v1/activity");
+
