@@ -23,6 +23,11 @@ import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./function
 import {averageSteps} from "./functions/averageSteps.js";
 
 // QUERY SELECTORS
+const userDataElement = document.querySelector('.user-data');
+const welcomeMessage = document.querySelector('.welcome-message');
+const widgets = document.querySelector('.widgets');
+const boxes = document.querySelector('.box');
+const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
 
