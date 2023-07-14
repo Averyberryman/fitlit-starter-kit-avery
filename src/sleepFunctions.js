@@ -7,7 +7,7 @@ const averageDailySleepHours = (userID, dataSet) => {
   const averageDailySleepQuality = (userID, dataSet) => {
     const userSleepData = dataSet.sampleSleepData.filter((sleepObj) => sleepObj.userID === userID);
     const totalSleepQuality = userSleepData.reduce((acc, curr) => acc + curr.sleepQuality, 0);
-    return totalSleepQuality / userSleepData.length;
+    return Math.round((totalSleepQuality / userSleepData.length) * 1e1)/1e1;
   };
   
   const getDailySleepHours = (userID, date, dataSet) => {
