@@ -11,4 +11,8 @@ import './images/turing-logo.png';
 // An example of how you tell webpack to use a JS file
 import { APICall } from "./apiCalls"
 
+let usersData;
+let sleepData;
+let hydrationData;
+let activityData;
 
