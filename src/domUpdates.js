@@ -34,8 +34,13 @@ let usersData;
 let sleepData;
 let hydrationData;
 let activityData;
+let currentUser;
 
 // MODIFIERS
+const displayUserData = () => {
+return welcomeMessage.innerText = `Welcome, ${currentUser.name}!`
+
+}
 
 // EXPORTS
 export {
@@ -44,6 +49,7 @@ export {
   getDailyOunces,
   getWeeklyOunces,
   averageSteps,
+  displayUserData,
   userDataElement,
   welcomeMessage,
   widgets,

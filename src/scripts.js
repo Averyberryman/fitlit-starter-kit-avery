@@ -10,12 +10,14 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use a JS file
 import { APICall } from "./apiCalls"
-import { getRandomUser } from './domUpdates';
+import { getRandomUser } from './getRandomUser';
+import {displayUserData} from './domUpdates';
 
 let usersData;
 let sleepData;
 let hydrationData;
 let activityData;
+let currentUser;
 
 const getUsersData = APICall("https://fitlit-api.herokuapp.com/api/v1/users");
 const getSleepData = APICall("https://fitlit-api.herokuapp.com/api/v1/sleep");
@@ -23,20 +25,21 @@ const getHydrationData = APICall("https://fitlit-api.herokuapp.com/api/v1/hydrat
 const getActivityData = APICall("https://fitlit-api.herokuapp.com/api/v1/activity");
 
 const getAllData = () => {
-  Promise.all([getUsersData, getSleepData, getHydrationData, getActivityData])
-  .then((data) => {
-      usersData = data[0];
-      sleepData = data[1];
-      hydrationData = data[2];
-      activityData = data[3];
-      console.log({usersData}, {sleepData}, {hydrationData}, {activityData});
-    }
-  );
+  // Promise.all([getUsersData, getSleepData, getHydrationData, getActivityData])
+  // .then((data) => {
+  //   usersData = data[0];
+  //   sleepData = data[1];
+  //   hydrationData = data[2];
+  //   activityData = data[3];
+  // }
+  // );
 };
 
+// Event Listeners
 window.addEventListener('load', () => {
   getAllData()
+  currentUser = getRandomUser(usersData.usersData)
+  displayUserData()
+
 });
-window.addEventListener('load',  () => {
-  getRandomUser()
-});
+
