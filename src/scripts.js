@@ -33,5 +33,10 @@ const getAllData = () => {
     }
   );
 };
-window.addEventListener('load', getAllData);
-window.addEventListener('load', getRandomUser)
+
+window.addEventListener('load', () => {
+  getAllData()
+});
+window.addEventListener('load',  () => {
+  getRandomUser()
+});
