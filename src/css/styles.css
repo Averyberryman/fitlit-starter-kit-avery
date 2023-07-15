@@ -8,15 +8,14 @@ html {
 main {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 
-.left-side {
+/* .left-side {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-
+} */
 
 .user-data {
   border: 3px dashed beige;
@@ -32,13 +31,10 @@ main {
   align-items: center;
 }
 
-
-.box {
-  background-color: #25272c;
-  display: grid;
-  place-items: center;
-  height: 100vh;
+.welcome-message {
+  color: beige;
 }
+
 
 .container,
 .user-data,
@@ -55,11 +51,13 @@ main {
 
 .boxy {
   animation: grow 10s linear infinite;
-  background: rgb(165, 45, 1);
+  background: rgb(0, 0, 0);
   height: 100px;
   opacity: 0.5;
   position: relative;
-  width: 100px;
+  width: 700px;
+  border-radius: 10px;
+  color: beige;
 }
 
 @keyframes grow {
@@ -87,7 +85,32 @@ main {
   margin: 15px;
   border-radius: 20px;
   color: beige;
+  place-items: center;
 }
+
+.hydro {
+  width: 195px;
+  height: 425px;
+  background: url(https://image.ibb.co/fmHm66/wave.png);
+  background-position: 0px 350px;
+  background-repeat: repeat-x;
+  animation: filling 10s ease-in-out infinite;
+}
+
+@keyframes filling {
+  50% {background-position: 3000px 0px;}
+  100% {background-position: 6000px 350px;}
+}
+
+.sleep {
+  background: url(https://cssanimation.rocks/images/random/space2.jpg);
+  /* float:left */
+}
+
+.steps {
+  background: url(https://www.publicdomainpictures.net/pictures/110000/nahled/vertical-road-into-the-distance.jpg);
+}
+
 
 .left-side {
   display: flex;
