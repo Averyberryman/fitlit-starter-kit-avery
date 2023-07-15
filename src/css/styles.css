@@ -17,26 +17,21 @@ main {
   flex-direction: column;
 }
 
+
 .user-data {
-  border: 1px solid white;
+  border: 3px dashed beige;
   height: 300px;
   flex-direction: row;
   flex-basis: 300px;
   text-align: center;
   border-radius: 60px;
-  color: white;
-}
-
-.user-data {
+  color: beige;
   background-color: #25272c;
-  display: grid;
-  place-items: center;
-  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.user-box {
-  color: white;
-}
 
 .box {
   background-color: #25272c;
@@ -45,27 +40,27 @@ main {
   height: 100vh;
 }
 
-
-.container, .user-data, .general-info, .box {
+.container,
+.user-data,
+.general-info,
+.box {
   background: #050405;
   border-radius: 160px;
   display: grid;
   height: 385px;
   overflow: hidden;
-  place-items: center;
   position: relative;
   width: 700px;
 }
 
 .boxy {
   animation: grow 10s linear infinite;
-  background: #471e45;
+  background: rgb(165, 45, 1);
   height: 100px;
   opacity: 0.5;
   position: relative;
   width: 100px;
 }
-
 
 @keyframes grow {
   from {
@@ -85,13 +80,13 @@ main {
 }
 
 .box {
-  border: 5px dotted white;
+  border: 3px dashed beige;
   height: 425px;
   width: 200px;
   text-align: center;
   margin: 15px;
   border-radius: 20px;
-  color: white;
+  color: beige;
 }
 
 .left-side {
@@ -101,10 +96,11 @@ main {
 }
 
 .general-info {
-  border: 1px solid white;
+  border: 3px dashed beige;
   height: 750px;
   width: 500px;
   border-radius: 30px;
+  place-items: center;
   text-align: center;
-  color: white;
+  color: beige;
 }
