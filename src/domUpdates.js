@@ -18,9 +18,9 @@
 // DOM MANIPULATION 
 
 // IMPORTS
-import {getRandomUser} from "./functions/getRandomUser.js";
-import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./functions/hydrationFunctions.js";
-import {averageSteps} from "./functions/averageSteps.js";
+import {getRandomUser} from "./getRandomUser.js";
+import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
+import {averageSteps} from "./averageSteps.js";
 
 // QUERY SELECTORS
 const userDataElement = document.querySelector('.user-data');

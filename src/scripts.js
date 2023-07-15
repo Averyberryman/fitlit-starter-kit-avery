@@ -3,13 +3,14 @@
 
 
 // An example of how you tell webpack to use a CSS file
-// import './css/styles.css';
+import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png';
 
 // An example of how you tell webpack to use a JS file
 import { APICall } from "./apiCalls"
+import { getRandomUser } from './domUpdates';
 
 let usersData;
 let sleepData;
@@ -32,4 +33,10 @@ const getAllData = () => {
     }
   );
 };
-window.addEventListener('load', getAllData);
+
+window.addEventListener('load', () => {
+  getAllData()
+});
+window.addEventListener('load',  () => {
+  getRandomUser()
+});

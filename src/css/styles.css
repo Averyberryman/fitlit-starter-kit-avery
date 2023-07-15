@@ -1,45 +1,92 @@
-body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+body,
+html {
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/022/965/995/small_2x/drops-of-water-on-a-woman-s-tanned-skin-background-generative-ai-photo.jpg);
   background-repeat: no-repeat;
-  height: 100%;
+  background-size: cover;
 }
 
 main {
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-around;
   align-items: flex-start;
 }
 
 .left-side {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  
+  flex-direction: column;
 }
 
+
 .user-data {
-  border: 1px solid black;
+  border: 3px dashed beige;
   height: 300px;
   flex-direction: row;
   flex-basis: 300px;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 60px;
+  color: beige;
+  background-color: #25272c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
+.box {
+  background-color: #25272c;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container,
+.user-data,
+.general-info,
+.box {
+  background: #050405;
+  border-radius: 160px;
+  display: grid;
+  height: 385px;
+  overflow: hidden;
+  position: relative;
+  width: 700px;
+}
+
+.boxy {
+  animation: grow 10s linear infinite;
+  background: rgb(165, 45, 1);
+  height: 100px;
+  opacity: 0.5;
+  position: relative;
+  width: 100px;
+}
+
+@keyframes grow {
+  from {
+    opacity: 0.5;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3.85);
+  }
+}
+
 .widgets {
- display: flex;
- flex-direction: row;
- justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .box {
-  border: 5px dotted black;
+  border: 3px dashed beige;
   height: 425px;
   width: 200px;
   text-align: center;
   margin: 15px;
   border-radius: 20px;
-
+  color: beige;
 }
 
 .left-side {
@@ -49,10 +96,11 @@ main {
 }
 
 .general-info {
-  border: 1px solid black;
+  border: 3px dashed beige;
   height: 750px;
   width: 500px;
   border-radius: 30px;
+  place-items: center;
   text-align: center;
+  color: beige;
 }
-
