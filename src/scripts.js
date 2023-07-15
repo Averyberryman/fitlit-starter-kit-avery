@@ -16,7 +16,7 @@ const mainData = {};
     const startWebPage = () => {
       console.log(getRandomUser(mainData.users))
       
-    }
+      }
     window.addEventListener('load', () => {
       Promise.all(promises)
       .then(response => {
@@ -31,3 +31,4 @@ const mainData = {};
         
       )
     });
+
