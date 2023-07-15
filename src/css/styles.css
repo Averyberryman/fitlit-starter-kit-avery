@@ -8,14 +8,7 @@ html {
 main {
   display: flex;
   justify-content: space-around;
-  /* align-items: flex-start; */
 }
-
-/* .left-side {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-} */
 
 .user-data {
   border: 3px dashed beige;
