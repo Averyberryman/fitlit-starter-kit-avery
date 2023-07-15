@@ -41,7 +41,7 @@ main {
   position: relative;
   width: 700px;
 }
-
+/* 
 .boxy {
   animation: grow 10s linear infinite;
   background: rgb(0, 0, 0);
@@ -62,7 +62,7 @@ main {
     opacity: 0;
     transform: scale(3.85);
   }
-}
+} */
 
 .widgets {
   display: flex;
