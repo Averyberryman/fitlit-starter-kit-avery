@@ -85,6 +85,7 @@ main {
   background-position: 0px 350px;
   background-repeat: repeat-x;
   height: 425px;
+  opacity: 50%;
   width: 195px;
 }
 

@@ -1,59 +1,50 @@
-//NOTE: Your DOM manipulation will occur in this file
-
-//Here are 2 example functions just to demonstrate one way you can export/import between the two js files. You'll want to delete these once you get your own code going.
-// const exampleFunction1 = (person) => {
-//   console.log(`oh hi there ${person}`)
-// }
-
-// const exampleFunction2 = (person) => {
-//   console.log(`bye now ${person}`)
-// }
-
-
-// export {
-//   exampleFunction1,
-//   exampleFunction2,
-// }
-
 // DOM MANIPULATION 
 
 // IMPORTS
-import {getRandomUser} from "./getRandomUser.js";
+// import {getRandomUser} from "./getRandomUser.js";
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
 import {averageSteps} from "./averageSteps.js";
-import {mainData} from "./scripts.js";
+import {mainData, currentUser} from "./scripts.js";
 
 // QUERY SELECTORS
 const userDataElement = document.querySelector('.user-data');
 const welcomeMessage = document.querySelector('.welcome-message');
 const widgets = document.querySelector('.widgets');
 const boxes = document.querySelector('.box');
+const sleepBox = document.querySelector('.sleep');
+const hydroBox = document.querySelector('.hydro');
+const stepsBox = document.querySelector('.steps');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
-let currentUser = getRandomUser(mainData.users);
 
 // MODIFIERS
 const displayUserData = () => {
 return welcomeMessage.innerText = `Welcome, ${currentUser.name}!`
-
 }
+
+const displayUserInfo = () => {
+  generalInfo.innerHTML = `<div>${currentUser.address}
+  ${currentUser.email} ${currentUser.strideLength} feet ${currentUser.dailyStepGoal} ${currentUser.friends.length} friends </div>`
+}
+
+const displayUserStepGoal = () => {
+  stepsBox.innerText = `YOU ${currentUser.dailyStepGoal} vs. THE WORLD ${averageSteps(mainData.users)}`
+}
+
 
 // EXPORTS
 export {
-  getRandomUser,
   averageDailyHydration,
   getDailyOunces,
   getWeeklyOunces,
   averageSteps,
   displayUserData,
+  displayUserInfo,
+  displayUserStepGoal,
   userDataElement,
   welcomeMessage,
   widgets,
   boxes,
   generalInfo,
-  usersData,
-  sleepData,
-  hydrationData,
-  activityData
-}
+  }
