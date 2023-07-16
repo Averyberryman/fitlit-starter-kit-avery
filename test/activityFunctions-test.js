@@ -34,3 +34,9 @@ describe('metDailyStepGoal', () => {
     expect(metDailyStepGoal(userID, date, usersData, activityData)).to.equal(`You have met your 7000 steps goal!`)
   })
 })
+// // IT 5: weekly view of step count and see if goal for each day has been reached
+// describe('weekStepGoals', () => {
+//   it('should check if the step goal was met for each day in the week', () => {
+//     weekStepGoals()
+//   })
+// })
