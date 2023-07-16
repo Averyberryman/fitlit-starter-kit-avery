@@ -4,17 +4,14 @@
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png';
-
 // An example of how you tell webpack to use a JS file
 import { promises } from "./apiCalls"
-import {getRandomUser} from "./getRandomUser"
+import {displayUserData} from "./domUpdates"
 
 const mainData = {};
 
     const startWebPage = () => {
-      console.log(getRandomUser(mainData.users))
+    displayUserData()
       
       }
     window.addEventListener('load', () => {
@@ -31,4 +28,4 @@ const mainData = {};
         
       )
     });
-
+ export {mainData}
