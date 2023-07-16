@@ -26,9 +26,6 @@ const mainData = {};
         mainData.sleep = sleepPromise;
         mainData.activity = activityPromise;
       })
-      .then(startWebPage
-        // dom func where you do all your shit
-        
-      )
+      .then(startWebPage)
     });
 
