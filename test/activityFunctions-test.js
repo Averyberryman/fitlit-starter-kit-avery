@@ -11,3 +11,12 @@ describe('milesWalkedOnDate', () => {
     expect(milesWalkedOnDate(userID, date, sampleUsers, sampleActivity)).to.equal(5.6)
   })
 })
+
+describe('dailyActiveMinutes', () => {
+  const userID = 1;
+  const date = '2023/03/24';
+
+  it('should get the users active minutes', () => {
+    expect(dailyActiveMinutes(userID, date, sampleActivity)).to.equal(261)
+  })
+})
