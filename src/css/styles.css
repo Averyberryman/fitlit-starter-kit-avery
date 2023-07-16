@@ -28,10 +28,8 @@ main {
   color: beige;
 }
 
-
 .container,
 .user-data,
-.general-info,
 .box {
   background: #050405;
   border-radius: 160px;
@@ -41,11 +39,11 @@ main {
   position: relative;
   width: 700px;
 }
-/* 
+ 
 .boxy {
-  animation: grow 10s linear infinite;
+  animation: grow 10s linear 1;
   background: rgb(0, 0, 0);
-  height: 100px;
+  height: 10px;
   opacity: 0.5;
   position: relative;
   width: 700px;
@@ -60,9 +58,9 @@ main {
   }
   to {
     opacity: 0;
-    transform: scale(3.85);
+    transform: scale(3.00);
   }
-} */
+}
 
 .widgets {
   display: flex;
@@ -97,13 +95,11 @@ main {
 
 .sleep {
   background: url(https://cssanimation.rocks/images/random/space2.jpg);
-  /* float:left */
 }
 
 .steps {
   background: url(https://www.publicdomainpictures.net/pictures/110000/nahled/vertical-road-into-the-distance.jpg);
 }
-
 
 .left-side {
   display: flex;
