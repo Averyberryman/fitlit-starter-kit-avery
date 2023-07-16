@@ -11,21 +11,17 @@ import {displayUserData} from "./domUpdates"
 const mainData = {};
 
     const startWebPage = () => {
-    displayUserData()
-      
+
       }
     window.addEventListener('load', () => {
       Promise.all(promises)
       .then(response => {
-        const [usersPromise, hyrdoPromise, sleepPromise, activityPromise] = response;
+        const [usersPromise, hydroPromise, sleepPromise, activityPromise] = response;
         mainData.users = usersPromise;
-        mainData.hydration = hyrdoPromise;
+        mainData.hydration = hydroPromise;
         mainData.sleep = sleepPromise;
         mainData.activity = activityPromise;
       })
-      .then(startWebPage
-        // dom func where you do all your shit
-        
-      )
+      .then(startWebPage)
     });
  export {mainData}
