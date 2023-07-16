@@ -1,10 +1,10 @@
 // DOM MANIPULATION 
 
 // IMPORTS
-import {getRandomUser} from "./getRandomUser.js";
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
+
 
 // QUERY SELECTORS
 const userDataElement = document.querySelector('.user-data');
@@ -29,7 +29,11 @@ const displayUserInfo = () => {
 }
 
 const displayUserStepGoal = () => {
-  stepsBox.innerText = `YOU ${currentUser.dailyStepGoal} vs. THE WORLD ${averageSteps(mainData.users)}`
+  stepsBox.innerText = `YOU: ${currentUser.dailyStepGoal} steps vs. THE WORLD: ${averageSteps(mainData.users)} steps`
+}
+
+const displayUserDailyHydration = () => {
+  hydroBox.innerHTML = `<div> You've consumed ${getDailyOunces(currentUser.id, mainData.hydration[mainData.hydration.length -1].date, mainData.hydration)}oz of water today! </div>`
 }
 
 
@@ -42,6 +46,7 @@ export {
   displayUserData,
   displayUserInfo,
   displayUserStepGoal,
+  displayUserDailyHydration,
   userDataElement,
   welcomeMessage,
   widgets,
