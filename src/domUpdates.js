@@ -21,6 +21,7 @@
 import {getRandomUser} from "./getRandomUser.js";
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
 import {averageSteps} from "./averageSteps.js";
+import {mainData} from "./scripts.js";
 
 // QUERY SELECTORS
 const userDataElement = document.querySelector('.user-data');
@@ -30,11 +31,7 @@ const boxes = document.querySelector('.box');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
-let usersData;
-let sleepData;
-let hydrationData;
-let activityData;
-let currentUser;
+let currentUser = getRandomUser(mainData.users);
 
 // MODIFIERS
 const displayUserData = () => {

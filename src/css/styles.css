@@ -11,27 +11,25 @@ main {
 }
 
 .user-data {
+  align-items: center;
+  background-color: #25272c;
   border: 3px dashed beige;
-  height: 300px;
-  flex-direction: row;
-  flex-basis: 300px;
-  text-align: center;
   border-radius: 60px;
   color: beige;
-  background-color: #25272c;
   display: flex;
+  flex-basis: 300px;
+  flex-direction: row;
+  height: 300px;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .welcome-message {
   color: beige;
 }
 
-
 .container,
 .user-data,
-.general-info,
 .box {
   background: #050405;
   border-radius: 160px;
@@ -41,16 +39,16 @@ main {
   position: relative;
   width: 700px;
 }
-
+ 
 .boxy {
-  animation: grow 10s linear infinite;
+  animation: grow 10s linear 1;
   background: rgb(0, 0, 0);
-  height: 100px;
+  border-radius: 10px;
+  color: beige;
+  height: 10px;
   opacity: 0.5;
   position: relative;
   width: 700px;
-  border-radius: 10px;
-  color: beige;
 }
 
 @keyframes grow {
@@ -60,7 +58,7 @@ main {
   }
   to {
     opacity: 0;
-    transform: scale(3.85);
+    transform: scale(3.00);
   }
 }
 
@@ -72,22 +70,22 @@ main {
 
 .box {
   border: 3px dashed beige;
-  height: 425px;
-  width: 200px;
-  text-align: center;
-  margin: 15px;
   border-radius: 20px;
   color: beige;
+  height: 425px;
+  margin: 15px;
   place-items: center;
+  text-align: center;
+  width: 200px;
 }
 
 .hydro {
-  width: 195px;
-  height: 425px;
+  animation: filling 10s ease-in-out infinite;
   background: url(https://image.ibb.co/fmHm66/wave.png);
   background-position: 0px 350px;
   background-repeat: repeat-x;
-  animation: filling 10s ease-in-out infinite;
+  height: 425px;
+  width: 195px;
 }
 
 @keyframes filling {
@@ -97,13 +95,11 @@ main {
 
 .sleep {
   background: url(https://cssanimation.rocks/images/random/space2.jpg);
-  /* float:left */
 }
 
 .steps {
   background: url(https://www.publicdomainpictures.net/pictures/110000/nahled/vertical-road-into-the-distance.jpg);
 }
-
 
 .left-side {
   display: flex;
@@ -113,10 +109,10 @@ main {
 
 .general-info {
   border: 3px dashed beige;
-  height: 750px;
-  width: 500px;
   border-radius: 30px;
+  color: beige;
+  height: 750px;
   place-items: center;
   text-align: center;
-  color: beige;
+  width: 500px;
 }
