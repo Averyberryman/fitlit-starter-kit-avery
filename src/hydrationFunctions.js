@@ -27,6 +27,7 @@ const getWeeklyOunces = (userID, endDate, dataSet) => {
     const hydroDate = new Date(hydroObj.date);
     const endDateObj = new Date(endDate);
     const startDateObj = new Date(endDateObj.getFullYear(), endDateObj.getMonth(), endDateObj.getDate() - 6);
+    console.log(hydroDate >= startDateObj && hydroDate <= endDateObj)
     return hydroDate >= startDateObj && hydroDate <= endDateObj;
   });
 
