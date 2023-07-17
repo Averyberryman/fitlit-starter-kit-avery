@@ -18,14 +18,9 @@ const metDailyStepGoal = (userID, date, usersData, activityData) => {
     return `You've walked ${stepsOnDate} out of ${userStepGoal}. `
   }
 };
-// IT 5: weekly view of step count and see if goal for each day has been reached
-// const weekStepGoals = () => {
-
-// };
 
 export { 
   milesWalkedOnDate,
   dailyActiveMinutes,
   metDailyStepGoal,
-  weekStepGoals
 }
