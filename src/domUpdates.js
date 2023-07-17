@@ -20,8 +20,10 @@ const sleepAverage = document.querySelector('.sleep-averages')
 const hydroBox = document.querySelector('.hydro');
 const dailyHydro = document.querySelector('.hydro-daily');
 const weeklyHydro = document.querySelector('.hydro-weekly');
+const userStepsToday = document.querySelector('.user-steps');
 const userStepsGoal= document.querySelector('.user-step-goal');
-const milesWalked = document.querySelector('.miles-activity')
+const milesWalked = document.querySelector('.miles-activity');
+const userMinutesActive = document.querySelector('.user-active-minutes');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
@@ -70,10 +72,19 @@ const displayUserAverageSleepData = () => {
   sleepAverage.innerText = `You are averaging ${averageSleepHours} hrs per night with an average sleep quality of ${averageSleepQuality}.`
 }
 
+const displayUserSteps = () => {
+  const today = mainData.activity[mainData.activity.length - 1].date;
+  const userSteps = mainData.activity.find((activity) => activity.userID === currentUser.id && activity.date === today).numSteps;
+  userStepsToday.innerText = `You have taken ${userSteps} steps today!`
+}
+
 const displayUserMilesWalked = () => {
   milesWalked.innerText = `Miles walked today: ${milesWalkedOnDate(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.users, mainData.activity)}`
 }
 
+const displayUserMinutesActive = () => {
+  userMinutesActive.innerText = `Active minutes: ${dailyActiveMinutes(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.activity)}`
+}
 
 // EXPORTS
 export {
@@ -90,6 +101,8 @@ export {
   displayUserWeeklySleep,
   displayUserAverageSleepData,
   displayUserMilesWalked,
+  displayUserMinutesActive,
+  displayUserSteps,
   userDataElement,
   welcomeMessage,
   widgets,
