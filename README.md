@@ -1,78 +1,47 @@
-# FitLit Starter Kit
+## Installation Instructions:
 
-The details of this project are outline in [this project spec](http://frontend.turing.io/projects/fitlit.html).
+[FITLIT](https://github.com/Marisa5280/fitlit-starter-kit.git) if you would like to build your own version, you can clone the repository to your local machine as follows:
+1. Go to the [FITLIT](https://github.com/Marisa5280/fitlit-starter-kit.git) .
+2. Select the "fork" option on the upperright and follow the prompts to save a fork to your GitHub account:
+<img width="532" alt="image of github fork button" src="https://user-images.githubusercontent.com/7227063/243205594-971fd24b-4cdf-4861-8e37-65c1c46d3a1d.png">
+3. Once you have forked the repository, choose the "Code" drop down to copy the SSH key for cloning:
+    ![image](https://user-images.githubusercontent.com/7227063/243205687-99544707-a35c-4085-9e06-6e4fc2cef2aa.png)
+4. Open your preferred command-line interface tool (e.g. Terminal) and create a directory where you would like to clone the repository.
+5. Change directories into the directory your created.
+6. Without the brackets, type [git clone], type a space, then use Command-v on a Mac, or Control-v on PC/Android to past in the SSH key you copied in step 3.
 
-## Setup
+## Initialization:
+1. Run npm install in your machine's terminal.
+2. Run npm start and follow the local host link provided by the terminal.
 
-1. Within your group, decide on **one** person to have the project repository (repo) on their GitHub account. Then, that person should *fork* this repo - on the top right corner of this page, click the **Fork** button.
-1. Both memebers of the group should clone down the _forked_ repo. Since you don't want to name your project "activity-tracker-starter", you can use an optional argument when you run git clone (you replace the [...] with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Once you have cloned the repo, change into the directory and install the project dependencies. Run `npm install` to install project dependencies.
-1. Run `npm start` in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page).  `Control + C` is the command to stop running the local server.  Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems. This command is not specific to Webpack; make note of it for future use.   
-1. Make sure both members of your team are collaborators on the forked repo.  
-1. Do not run `npm audit fix --force`.  This will update to the latest version of packages.  We need to be using `webpack-dev-server@3.11.2` which is not the latest version.  If you start to run into Webpack errors, first check that all group members are using the correct version.  
+(18 kB)
+https://user-images.githubusercontent.com/7227063/243205594-971fd24b-4cdf-4861-8e37-65c1c46d3a1d.png
 
-## Testing
+(22 kB)
+https://user-images.githubusercontent.com/7227063/243205687-99544707-a35c-4085-9e06-6e4fc2cef2aa.png
 
-Mocha and chai are already set up, with a boilerplate test for you..
+## Abstract:
+The Fitlit app is a web-based application that allows users to track their health data in a neatly organized display. Users are able to view their hydration, step, and sleep data in various forms. For example, a user may want to know if they've reached their step goal for an individual day, or how many times they've met their step goal in a given week. Additionally, users can track their weekly sleep data in both quantity (hours) and quality based on the aggregate data of a given week. Finally, a user can track their water intake on a given day or view their habitual water intake over a given week. General info is displayed on the right side of the page, where a user's name, address, email, stridelength, step goal, and how many friends they have - each of which is another user!
+
+All user data is fetched from external API's which are called within each function inside the domupdates.js file.
+
+## Contributors:
+Marisa Wyatt https://github.com/Marisa5280
+Lauren DeLaRosa - https://github.com/LDeLaRosa13
+Avery Berryman - https://github.com/Averyberryman
+
+## Technologies used:
+
+- JavaScript 
+- HTML
+- CSS 
+- Npm
+- Mocha 
+- Chai
+- Git 
+- WebPack
+- Fetch API
 
 
-## Data Model
 
-**Users**
 
-```
-[
-  {
-    "id": [number],
-    "name": [string],
-    "address": [string],
-    "email": [string],
-    "strideLength": [number - feet],
-    "dailyStepGoal": [number - steps],
-    "friends": [array - one-way connection to other user(s)]
-  },
-  ...more user data
-]
-```
-
-**Activity**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numSteps": [number - steps],
-    "minutesActive": [number - minutes],
-    "flightsOfStairs": [number - flights]
-  },
-  ...more activity data
-]
-```
-
-**Hydration**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "numOunces": [number - ounces]
-  },
-  ...more hydration data
-]
-```
-
-**Sleep**
-
-```
-[
-  {
-    "userID": [number],
-    "date": [string YYYY/MM/DD],
-    "hoursSlept": [number - hours],
-    "sleepQuality": [number - unitless]
-  },
-  ...more sleep data
-]
-```
