@@ -25,12 +25,22 @@ The Fitlit app is a web-based application that allows users to track their healt
 
 All user data is fetched from external API's which are called within each function inside the domupdates.js file.
 
-
 ## Contributors:
 Marisa Wyatt https://github.com/Marisa5280
 Lauren DeLaRosa - https://github.com/LDeLaRosa13
 Avery Berryman - https://github.com/Averyberryman
 
+## Technologies used:
+
+- JavaScript 
+- HTML
+- CSS 
+- Npm
+- Mocha 
+- Chai
+- Git 
+- WebPack
+- Fetch API
 
 
 
