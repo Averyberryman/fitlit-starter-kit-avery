@@ -2,7 +2,8 @@
 
 // IMPORTS
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
-import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, getWeeklySleepQuality } from "./sleepFunctions.js";
+import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, } from "./sleepFunctions.js";
+import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal } from "./activityFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
 
@@ -19,7 +20,11 @@ const sleepAverage = document.querySelector('.sleep-averages')
 const hydroBox = document.querySelector('.hydro');
 const dailyHydro = document.querySelector('.hydro-daily');
 const weeklyHydro = document.querySelector('.hydro-weekly');
-const stepsBox = document.querySelector('.steps');
+const userStepsToday = document.querySelector('.user-steps');
+const userStepsGoal= document.querySelector('.user-step-goal');
+const milesWalked = document.querySelector('.miles-activity');
+const userMinutesActive = document.querySelector('.user-active-minutes');
+const userWeeklyStepGoal = document.querySelector('.user-weekly-step-goal');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
@@ -35,18 +40,12 @@ const displayUserInfo = () => {
 }
 
 const displayUserStepGoal = () => {
-  stepsBox.innerText = `YOU: ${currentUser.dailyStepGoal} steps vs. THE WORLD: ${averageSteps(mainData.users)} steps`
+  userStepsGoal.innerText = `YOU: ${currentUser.dailyStepGoal} steps vs. THE WORLD: ${averageSteps(mainData.users)} steps`
 }
 
 const displayUserDailyHydration = () => {
   dailyHydro.innerHTML = `<div> You've consumed ${getDailyOunces(currentUser.id, mainData.hydration[mainData.hydration.length -1].date, mainData.hydration)}oz of water today! </div>`
 }
-
-// const displayUserWeeklyHydration = () => {
-//   const weeklyOuncesData = getWeeklyOunces(currentUser.id, mainData.hydration[mainData.hydration.length -1].date, mainData.hydration);
-//   Object.entries(weeklyOuncesData).forEach(([date, ounces]) => {
-//   weeklyHydro.innerHTML = `<div> Daily water intake this week: Date: ${date}, Ounces: ${ounces}</div>`
-// })}
 
 const displayUserWeeklyHydration = () => {
   const weeklyOuncesData = getWeeklyOunces(currentUser.id, mainData.hydration[mainData.hydration.length - 1].date, mainData.hydration);
@@ -74,6 +73,24 @@ const displayUserAverageSleepData = () => {
   sleepAverage.innerText = `You are averaging ${averageSleepHours} hrs per night with an average sleep quality of ${averageSleepQuality}.`
 }
 
+const displayUserSteps = () => {
+  const today = mainData.activity[mainData.activity.length - 1].date;
+  const userSteps = mainData.activity.find((activity) => activity.userID === currentUser.id && activity.date === today).numSteps;
+  userStepsToday.innerText = `You have taken ${userSteps} steps today!`
+}
+
+const displayUserMilesWalked = () => {
+  milesWalked.innerText = `Miles walked today: ${milesWalkedOnDate(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.users, mainData.activity)}`
+}
+
+const displayUserMinutesActive = () => {
+  userMinutesActive.innerText = `Active minutes: ${dailyActiveMinutes(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.activity)}`
+}
+
+const displayUserWeeklyStepGoal = () => {
+  userWeeklyStepGoal.innerText = `${metDailyStepGoal()}`
+}
+
 // EXPORTS
 export {
   averageDailyHydration,
@@ -88,6 +105,9 @@ export {
   displayUserDailySleep,
   displayUserWeeklySleep,
   displayUserAverageSleepData,
+  displayUserMilesWalked,
+  displayUserMinutesActive,
+  displayUserSteps,
   userDataElement,
   welcomeMessage,
   widgets,
