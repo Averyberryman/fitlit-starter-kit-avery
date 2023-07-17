@@ -2,6 +2,7 @@
 
 // IMPORTS
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
+import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, getWeeklySleepQuality } from "./sleepFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
 
@@ -12,6 +13,8 @@ const welcomeMessage = document.querySelector('.welcome-message');
 const widgets = document.querySelector('.widgets');
 const boxes = document.querySelector('.box');
 const sleepBox = document.querySelector('.sleep');
+const dailySleep = document.querySelector('.sleep-daily')
+const weeklySleep = document.querySelector('.sleep-weekly')
 const hydroBox = document.querySelector('.hydro');
 const dailyHydro = document.querySelector('.hydro-daily');
 const weeklyHydro = document.querySelector('.hydro-weekly');
@@ -52,6 +55,10 @@ const displayUserWeeklyHydration = () => {
   weeklyHydro.innerHTML = weeklyHydrationContent;
 };
 
+const displayUserDailySleep = () => {
+  dailySleep.innerText = `You slept ${getDailySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)} hours last night. Your sleep quality was ${getDailySleepQuality(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)}.`
+}
+
 
 // EXPORTS
 export {
@@ -64,6 +71,7 @@ export {
   displayUserStepGoal,
   displayUserDailyHydration,
   displayUserWeeklyHydration,
+  displayUserDailySleep,
   userDataElement,
   welcomeMessage,
   widgets,
