@@ -24,6 +24,7 @@ const userStepsToday = document.querySelector('.user-steps');
 const userStepsGoal= document.querySelector('.user-step-goal');
 const milesWalked = document.querySelector('.miles-activity');
 const userMinutesActive = document.querySelector('.user-active-minutes');
+const userWeeklyStepGoal = document.querySelector('.user-weekly-step-goal');
 const generalInfo = document.querySelector('.general-info');
 
 // DATAMODEL
@@ -84,6 +85,10 @@ const displayUserMilesWalked = () => {
 
 const displayUserMinutesActive = () => {
   userMinutesActive.innerText = `Active minutes: ${dailyActiveMinutes(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.activity)}`
+}
+
+const displayUserWeeklyStepGoal = () => {
+  userWeeklyStepGoal.innerText = `${metDailyStepGoal()}`
 }
 
 // EXPORTS

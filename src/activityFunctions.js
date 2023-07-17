@@ -19,6 +19,7 @@ const metDailyStepGoal = (userID, date, usersData, activityData) => {
   }
 };
 
+
 export { 
   milesWalkedOnDate,
   dailyActiveMinutes,
