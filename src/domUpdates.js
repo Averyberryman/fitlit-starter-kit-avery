@@ -3,7 +3,7 @@
 // IMPORTS
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
 import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, } from "./sleepFunctions.js";
-import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal } from "./activityFunctions.js";
+import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal, getWeeklyStepGoals } from "./activityFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
 
@@ -42,6 +42,15 @@ const displayUserInfo = () => {
 const displayUserStepGoal = () => {
   userStepsGoal.innerText = `YOU: ${currentUser.dailyStepGoal} steps vs. THE WORLD: ${averageSteps(mainData.users)} steps`
 }
+
+const displayUserWeeklyStepGoal = () => {
+  const weeklyStepsData = getWeeklyStepGoals(currentUser, mainData.activity);
+  const weeklyStepGoals = weeklyStepsData.map((goalStatus) => {
+    return `<div>${goalStatus}</div>`;
+  }).join('');
+  userWeeklyStepGoal.innerHTML = weeklyStepGoals;
+};
+
 
 const displayUserDailyHydration = () => {
   dailyHydro.innerHTML = `<div> You've consumed ${getDailyOunces(currentUser.id, mainData.hydration[mainData.hydration.length -1].date, mainData.hydration)}oz of water today! </div>`
@@ -87,9 +96,6 @@ const displayUserMinutesActive = () => {
   userMinutesActive.innerText = `Active minutes: ${dailyActiveMinutes(currentUser.id, mainData.activity[mainData.activity.length - 1].date, mainData.activity)}`
 }
 
-const displayUserWeeklyStepGoal = () => {
-  userWeeklyStepGoal.innerText = `${metDailyStepGoal()}`
-}
 
 // EXPORTS
 export {
@@ -108,6 +114,7 @@ export {
   displayUserMilesWalked,
   displayUserMinutesActive,
   displayUserSteps,
+  displayUserWeeklyStepGoal,
   userDataElement,
   welcomeMessage,
   widgets,
