@@ -36,7 +36,7 @@ return welcomeMessage.innerText = `Welcome, ${currentUser.name}!`;
 
 const displayUserInfo = () => {
   generalInfo.innerHTML = `<div>${currentUser.address}
-  ${currentUser.email} ${currentUser.strideLength} feet ${currentUser.dailyStepGoal} ${currentUser.friends.length} friends </div>`
+  ${currentUser.email} ${currentUser.strideLength} feet, DSG: ${currentUser.dailyStepGoal} ${currentUser.friends.length} friends </div>`
 }
 
 const displayUserStepGoal = () => {
