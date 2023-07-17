@@ -1,28 +1,28 @@
-// import { expect } from 'chai';
-// import sampleActivity from '../src/data/sample-activity';
-// import sampleUsers from '../src/data/sample-users';
-// import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal } from '../src/activityFunctions';
+import { expect } from 'chai';
+import sampleActivity from '../src/data/sample-activity';
+import sampleUsers from '../src/data/sample-users';
+import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal } from '../src/activityFunctions';
 
 
-// describe('milesWalkedOnDate', () => {
-//   const userID = 1;
-//   const date = '2023/03/24';
-//   const activityData = sampleActivity.sampleActivityData;
-//   const usersData = sampleUsers.sampleUsers;
-//   it('should calculate total miles walked on a date by a user', () => {
-//     expect(milesWalkedOnDate(userID, date, usersData, activityData)).to.equal(5.6)
-//   })
-// })
+describe('milesWalkedOnDate', () => {
+  const userID = 1;
+  const date = '2023/03/24';
+  const activityData = sampleActivity.sampleActivityData;
+  const usersData = sampleUsers.sampleUsers;
+  it('should calculate total miles walked on a date by a user', () => {
+    expect(milesWalkedOnDate(userID, date, usersData, activityData)).to.equal(5.6)
+  })
+})
 
-// describe('dailyActiveMinutes', () => {
-//   const userID = 1;
-//   const date = '2023/03/24';
-//   const activityData = sampleActivity.sampleActivityData;
+describe('dailyActiveMinutes', () => {
+  const userID = 1;
+  const date = '2023/03/24';
+  const activityData = sampleActivity.sampleActivityData;
   
-//   it('should get the users active minutes', () => {
-//     expect(dailyActiveMinutes(userID, date, activityData)).to.equal(261)
-//   })
-// })
+  it('should get the users active minutes', () => {
+    expect(dailyActiveMinutes(userID, date, activityData)).to.equal(261)
+  })
+})
 
 // describe('metDailyStepGoal', () => {
 //   const userID = 1;
