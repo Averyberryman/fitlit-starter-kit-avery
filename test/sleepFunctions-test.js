@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import sampleSleepData from '../src/data/sample-sleep';
+import sampleSleep from '../src/data/sample-sleep';
 import { averageDailySleepHours,
     averageDailySleepQuality,
     getDailySleepHours,
@@ -12,7 +12,7 @@ import { averageDailySleepHours,
       const userID = 1;
       const expectedAverage = 6.6; 
 
-      const result = averageDailySleepHours(userID, sampleSleepData);
+      const result = averageDailySleepHours(userID, sampleSleep.sampleSleepData);
       expect(result).to.equal(expectedAverage);
     });
   });
@@ -22,7 +22,7 @@ import { averageDailySleepHours,
       const userID = 1;
       const expectedAverage = 3.6;
 
-      const result = averageDailySleepQuality(userID, sampleSleepData);
+      const result = averageDailySleepQuality(userID, sampleSleep.sampleSleepData);
       expect(result).to.equal(expectedAverage);
     });
   });
@@ -33,7 +33,7 @@ import { averageDailySleepHours,
       const date = '2023/03/24';
       const expectedHours = 9.6; 
 
-      const result = getDailySleepHours(userID, date, sampleSleepData);
+      const result = getDailySleepHours(userID, date, sampleSleep.sampleSleepData);
       expect(result).to.equal(expectedHours);
     });
   });
@@ -44,7 +44,7 @@ import { averageDailySleepHours,
       const date = '2023/03/24';
       const expectedQuality = 4.3;
 
-      const result = getDailySleepQuality(userID, date, sampleSleepData);
+      const result = getDailySleepQuality(userID, date, sampleSleep.sampleSleepData);
       expect(result).to.equal(expectedQuality);
     });
   });
@@ -63,7 +63,7 @@ import { averageDailySleepHours,
         '2023/03/30': 6.2
       };
 
-      const result = getWeeklySleepHours(userID, endDate, sampleSleepData);
+      const result = getWeeklySleepHours(userID, endDate, sampleSleep.sampleSleepData);
       expect(result).to.deep.equal(expectedHours);
     });
   });
@@ -82,7 +82,7 @@ import { averageDailySleepHours,
         '2023/03/30': 3.3
       };
 
-      const result = getWeeklySleepQuality(userID, endDate, sampleSleepData);
+      const result = getWeeklySleepQuality(userID, endDate, sampleSleep.sampleSleepData);
       expect(result).to.deep.equal(expectedQuality);
     });
   });

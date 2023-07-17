@@ -2,6 +2,7 @@
 
 // IMPORTS
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
+import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, getWeeklySleepQuality } from "./sleepFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
 
@@ -12,6 +13,9 @@ const welcomeMessage = document.querySelector('.welcome-message');
 const widgets = document.querySelector('.widgets');
 const boxes = document.querySelector('.box');
 const sleepBox = document.querySelector('.sleep');
+const dailySleep = document.querySelector('.sleep-daily')
+const weeklySleep = document.querySelector('.sleep-weekly')
+const sleepAverage = document.querySelector('.sleep-averages')
 const hydroBox = document.querySelector('.hydro');
 const dailyHydro = document.querySelector('.hydro-daily');
 const weeklyHydro = document.querySelector('.hydro-weekly');
@@ -52,6 +56,23 @@ const displayUserWeeklyHydration = () => {
   weeklyHydro.innerHTML = weeklyHydrationContent;
 };
 
+const displayUserDailySleep = () => {
+  dailySleep.innerText = `You slept ${getDailySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)} hours last night. Your sleep quality was ${getDailySleepQuality(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)}.`
+}
+
+const displayUserWeeklySleep = () => {
+  const weeklySleepData = getWeeklySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length - 1].date, mainData.sleep);
+  const weeklySleepContent = Object.entries(weeklySleepData).map(([date, hours]) => {
+    return `<div>${date}: ${hours[0]} hrs, Quality: ${hours[1]}.</div>`;
+  }).join('');
+  weeklySleep.innerHTML = weeklySleepContent;
+};
+
+const displayUserAverageSleepData = () => {
+  const averageSleepHours = averageDailySleepHours(currentUser.id, mainData.sleep);
+  const averageSleepQuality = averageDailySleepQuality(currentUser.id, mainData.sleep);
+  sleepAverage.innerText = `You are averaging ${averageSleepHours} hrs per night with an average sleep quality of ${averageSleepQuality}.`
+}
 
 // EXPORTS
 export {
@@ -64,6 +85,9 @@ export {
   displayUserStepGoal,
   displayUserDailyHydration,
   displayUserWeeklyHydration,
+  displayUserDailySleep,
+  displayUserWeeklySleep,
+  displayUserAverageSleepData,
   userDataElement,
   welcomeMessage,
   widgets,
