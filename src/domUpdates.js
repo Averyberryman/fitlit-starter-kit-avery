@@ -59,6 +59,14 @@ const displayUserDailySleep = () => {
   dailySleep.innerText = `You slept ${getDailySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)} hours last night. Your sleep quality was ${getDailySleepQuality(currentUser.id, mainData.sleep[mainData.sleep.length -1].date, mainData.sleep)}.`
 }
 
+const displayUserWeeklySleep = () => {
+  const weeklySleepData = getWeeklySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length - 1].date, mainData.sleep);
+  const weeklySleepContent = Object.entries(weeklySleepData).map(([date, hours]) => {
+    return `<div>${date}: ${hours[0]} hrs, Quality: ${hours[1]}.</div>`;
+  }).join('');
+  weeklySleep.innerHTML = weeklySleepContent;
+};
+
 
 // EXPORTS
 export {
@@ -72,6 +80,7 @@ export {
   displayUserDailyHydration,
   displayUserWeeklyHydration,
   displayUserDailySleep,
+  displayUserWeeklySleep,
   userDataElement,
   welcomeMessage,
   widgets,

@@ -33,7 +33,8 @@ const averageDailySleepHours = (userID, dataSet) => {
     weeklyData.forEach((sleepObj) => {
       const date = sleepObj.date;
       const hours = sleepObj.hoursSlept;
-      dailySleepHours[date] = hours;
+      const quality = sleepObj.sleepQuality
+      dailySleepHours[date] = [hours, quality];
     });
   
     return dailySleepHours;
