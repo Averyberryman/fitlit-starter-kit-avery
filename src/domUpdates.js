@@ -15,6 +15,7 @@ const boxes = document.querySelector('.box');
 const sleepBox = document.querySelector('.sleep');
 const dailySleep = document.querySelector('.sleep-daily')
 const weeklySleep = document.querySelector('.sleep-weekly')
+const sleepAverage = document.querySelector('.sleep-averages')
 const hydroBox = document.querySelector('.hydro');
 const dailyHydro = document.querySelector('.hydro-daily');
 const weeklyHydro = document.querySelector('.hydro-weekly');
@@ -67,6 +68,11 @@ const displayUserWeeklySleep = () => {
   weeklySleep.innerHTML = weeklySleepContent;
 };
 
+const displayUserAverageSleepData = () => {
+  const averageSleepHours = averageDailySleepHours(currentUser.id, mainData.sleep);
+  const averageSleepQuality = averageDailySleepQuality(currentUser.id, mainData.sleep);
+  sleepAverage.innerText = `You are averaging ${averageSleepHours} hrs per night with an average sleep quality of ${averageSleepQuality}.`
+}
 
 // EXPORTS
 export {
@@ -81,6 +87,7 @@ export {
   displayUserWeeklyHydration,
   displayUserDailySleep,
   displayUserWeeklySleep,
+  displayUserAverageSleepData,
   userDataElement,
   welcomeMessage,
   widgets,

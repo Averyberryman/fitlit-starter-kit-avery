@@ -6,13 +6,12 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use a JS file
 import { promises } from "./apiCalls"
-import { displayUserData, displayUserInfo, displayUserStepGoal, displayUserDailyHydration, displayUserWeeklyHydration, displayUserDailySleep, displayUserWeeklySleep } from "./domUpdates"
+import { displayUserData, displayUserInfo, displayUserStepGoal, displayUserDailyHydration, displayUserWeeklyHydration, displayUserDailySleep, displayUserWeeklySleep, displayUserAverageSleepData } from "./domUpdates"
 import { getRandomUser } from './getRandomUser';
 
 const mainData = {};
 let currentUser;
 const startWebPage = () => {
-  console.log(mainData);
   currentUser = getRandomUser(mainData.users);
   displayUserData();
   displayUserInfo();
@@ -21,6 +20,7 @@ const startWebPage = () => {
   displayUserWeeklyHydration();
   displayUserDailySleep();
   displayUserWeeklySleep();
+  displayUserAverageSleepData();
 }
 
 window.addEventListener('load', () => {
