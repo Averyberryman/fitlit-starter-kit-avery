@@ -86,7 +86,7 @@ main {
   background-repeat: repeat-x;
   height: 425px;
   opacity: 50%;
-  width: 195px;  
+  width: 195px;
 }
 
 @keyframes filling {
@@ -108,12 +108,19 @@ main {
   justify-content: space-around;
 }
 
+.right-side {
+word-spacing: 15px;
+line-height: 5.5
+ 
+}
+
 .general-info {
   border: 3px dashed beige;
   border-radius: 30px;
-  color: beige;
+  color: black;
   height: 750px;
-  place-items: center;
+  place-items: middle;
   text-align: center;
+  font-size: xx-large;
   width: 500px;
 }
