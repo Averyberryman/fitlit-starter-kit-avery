@@ -17,6 +17,11 @@ https://user-images.githubusercontent.com/7227063/243205687-99544707-a35c-4085-9
 The Fitlit app is a web-based application that allows users to track their health data in a neatly organized display. Users are able to view their hydration, step, and sleep data in various forms. For example, a user may want to know if they've reached their step goal for an individual day, or how many times they've met their step goal in a given week. Additionally, users can track their weekly sleep data in both quantity (hours) and quality based on the aggregate data of a given week. Finally, a user can track their water intake on a given day or view their habitual water intake over a given week. General info is displayed on the right side of the page, where a user's name, address, email, stridelength, step goal, and how many friends they have - each of which is another user!
 
 
+## Contributors:
+Marisa Wyatt https://github.com/Marisa5280
+Lauren DeLaRosa - https://github.com/LDeLaRosa13
+Avery Berryman - https://github.com/Averyberryman
+
 
 
 
