@@ -2,8 +2,8 @@
 
 // IMPORTS
 import {averageDailyHydration, getDailyOunces, getWeeklyOunces} from "./hydrationFunctions.js";
-import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHours, } from "./sleepFunctions.js";
-import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal, getWeeklyStepGoals } from "./activityFunctions.js";
+import { averageDailySleepHours, averageDailySleepQuality, getDailySleepHours, getDailySleepQuality, getWeeklySleepHoursAndQuality, } from "./sleepFunctions.js";
+import { milesWalkedOnDate, dailyActiveMinutes, getWeeklyStepGoals } from "./activityFunctions.js";
 import {averageSteps} from "./averageSteps.js";
 import {mainData, currentUser} from "./scripts.js";
 
@@ -69,7 +69,7 @@ const displayUserDailySleep = () => {
 }
 
 const displayUserWeeklySleep = () => {
-  const weeklySleepData = getWeeklySleepHours(currentUser.id, mainData.sleep[mainData.sleep.length - 1].date, mainData.sleep);
+  const weeklySleepData = getWeeklySleepHoursAndQuality(currentUser.id, mainData.sleep[mainData.sleep.length - 1].date, mainData.sleep);
   const weeklySleepContent = Object.entries(weeklySleepData).map(([date, hours]) => {
     return `<div>${date}: ${hours[0]} hrs, Quality: ${hours[1]}.</div>`;
   }).join('');
