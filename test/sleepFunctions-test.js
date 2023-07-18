@@ -4,7 +4,8 @@ import { averageDailySleepHours,
     averageDailySleepQuality,
     getDailySleepHours,
     getDailySleepQuality,
-    getWeeklySleepHours, } from '../src/sleepFunctions';
+    getWeeklySleepHours,
+    getWeeklySleepHoursAndQuality, } from '../src/sleepFunctions';
 
   describe('averageDailySleepHours', () => {
     it('should calculate the average number of hours slept per day for a user', () => {
@@ -62,7 +63,7 @@ import { averageDailySleepHours,
         '2023/03/30': [6.2, 3.3]
       };
 
-      const result = getWeeklySleepHours(userID, endDate, sampleSleep.sampleSleepData);
+      const result = getWeeklySleepHoursAndQuality(userID, endDate, sampleSleep.sampleSleepData);
       expect(result).to.deep.equal(expectedHours);
     });
   });
