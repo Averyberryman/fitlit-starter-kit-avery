@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sampleActivity from '../src/data/sample-activity';
 import sampleUsers from '../src/data/sample-users';
-import { milesWalkedOnDate, dailyActiveMinutes, metDailyStepGoal } from '../src/activityFunctions';
+import { milesWalkedOnDate, dailyActiveMinutes, getWeeklyStepGoals } from '../src/activityFunctions';
 
 
 describe('milesWalkedOnDate', () => {
@@ -24,19 +24,17 @@ describe('dailyActiveMinutes', () => {
   })
 })
 
-// describe('metDailyStepGoal', () => {
-//   const userID = 1;
-//   const date = '2023/03/24';
-//   const activityData = sampleActivity.sampleActivityData;
-//   const usersData = sampleUsers.sampleUsers
-
-//   it('should determine if a user has met their step goal on a given day', () => {
-//     expect(metDailyStepGoal(userID, date, usersData, activityData)).to.equal(`You have met your 7000 steps goal!`)
-//   })
-// })
-// // // IT 5: weekly view of step count and see if goal for each day has been reached
-// // describe('weekStepGoals', () => {
-// //   it('should check if the step goal was met for each day in the week', () => {
-// //     weekStepGoals()
-// //   })
-// // })
+describe('getWeeklyStepGoals', () => {
+  const activityData = sampleActivity.sampleActivityData;
+  const user = sampleUsers.sampleUsers[0]
+  it('should determine if a user has met their step goal for the days of the last week', () => {
+    expect(getWeeklyStepGoals(user, activityData)).to.deep.equal([
+      '2023/03/24: pass',
+      '2023/03/25: pass',
+      '2023/03/26: pass',
+      '2023/03/27: fail',
+      '2023/03/28: pass',
+      '2023/03/29: pass'
+    ])
+  })
+})
