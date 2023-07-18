@@ -1,6 +1,7 @@
 ## Homepage display:
 
-![Homepage display](https://www.loom.com/i/23f595f207d949eb83a2f254a6cf355b)
+![Homepage display](https://user-images.githubusercontent.com/123911665/254100504-fa312855-ecad-435c-a4a1-393fe0a6e0d4.png)
+)
 
 ## Installation Instructions:
 
