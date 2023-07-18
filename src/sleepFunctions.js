@@ -20,7 +20,7 @@ const averageDailySleepHours = (userID, dataSet) => {
     return userSleepData ? userSleepData.sleepQuality : 0;
   };
   
-  const getWeeklySleepHours = (userID, endDate, dataSet) => {
+  const getWeeklySleepHoursAndQuality = (userID, endDate, dataSet) => {
     const userSleepData = dataSet.filter((sleepObj) => sleepObj.userID === userID);
     const weeklyData = userSleepData.filter((sleepObj) => {
       const sleepDate = new Date(sleepObj.date);
@@ -28,6 +28,7 @@ const averageDailySleepHours = (userID, dataSet) => {
       const startDateObj = new Date(endDateObj.getFullYear(), endDateObj.getMonth(), endDateObj.getDate() - 6);
       return sleepDate >= startDateObj && sleepDate <= endDateObj;
     });
+  
   
     const dailySleepHours = {};
     weeklyData.forEach((sleepObj) => {
@@ -59,10 +60,12 @@ const averageDailySleepHours = (userID, dataSet) => {
     return dailySleepQuality;
   };
   
-  export { averageDailySleepHours };
-  export { averageDailySleepQuality };
-  export { getDailySleepHours };
-  export { getDailySleepQuality };
-  export { getWeeklySleepHours };
-  export { getWeeklySleepQuality };
+  export {
+   averageDailySleepHours,
+   averageDailySleepQuality,
+   getDailySleepHours, 
+   getDailySleepQuality,
+   getWeeklySleepHoursAndQuality,
+   getWeeklySleepQuality 
+  };
   
