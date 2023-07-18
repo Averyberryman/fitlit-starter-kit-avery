@@ -1,3 +1,7 @@
+## Homepage display:
+
+![Homepage display](https://www.loom.com/i/23f595f207d949eb83a2f254a6cf355b)
+
 ## Installation Instructions:
 
 [FITLIT](https://github.com/Marisa5280/fitlit-starter-kit.git) if you would like to build your own version, you can clone the repository to your local machine as follows:
