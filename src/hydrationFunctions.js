@@ -17,17 +17,23 @@ const getDailyOunces = (userID, date, dataSet) => {
   if (userHydration) {
     return userHydration.numOunces;
   } else {
-
-  return 0;
-}};
+    return 0;
+  }
+};
 
 const getWeeklyOunces = (userID, endDate, dataSet) => {
-  const userHydration = dataSet.filter((hydroObj) => hydroObj.userID === userID);
+  const userHydration = dataSet.filter(
+    (hydroObj) => hydroObj.userID === userID
+  );
   const weeklyData = userHydration.filter((hydroObj) => {
     const hydroDate = new Date(hydroObj.date);
     const endDateObj = new Date(endDate);
-    const startDateObj = new Date(endDateObj.getFullYear(), endDateObj.getMonth(), endDateObj.getDate() - 6);
-    console.log(hydroDate >= startDateObj && hydroDate <= endDateObj)
+    const startDateObj = new Date(
+      endDateObj.getFullYear(),
+      endDateObj.getMonth(),
+      endDateObj.getDate() - 6
+    );
+    console.log(hydroDate >= startDateObj && hydroDate <= endDateObj);
     return hydroDate >= startDateObj && hydroDate <= endDateObj;
   });
 
@@ -41,7 +47,8 @@ const getWeeklyOunces = (userID, endDate, dataSet) => {
   return dailyOunces;
 };
 
-
-export { getDailyOunces };
-export { averageDailyHydration };
-export { getWeeklyOunces };
+export { 
+  getDailyOunces, 
+  averageDailyHydration, 
+  getWeeklyOunces 
+};
