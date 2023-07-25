@@ -1,3 +1,8 @@
+
+// An example of how you tell webpack to use a CSS file
+import './css/styles.css';
+
+// An example of how you tell webpack to use a JS file
 import { promises } from "./apiCalls"
 import { displayUserData, displayUserInfo, displayUserStepGoal, displayUserDailyHydration, displayUserWeeklyHydration, displayUserDailySleep, displayUserWeeklySleep, displayUserAverageSleepData, displayUserMilesWalked, displayUserMinutesActive, displayUserSteps, displayUserWeeklyStepGoal, } from "./domUpdates"
 import { getRandomUser } from './getRandomUser';
@@ -31,7 +36,6 @@ window.addEventListener('load', () => {
   })
   .then(startWebPage)
 });
-
  export {
   mainData,
   currentUser
