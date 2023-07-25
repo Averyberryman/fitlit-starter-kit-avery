@@ -56,7 +56,6 @@ const getWeeklySleepHoursAndQuality = (userID, endDate, dataSet) => {
     const quality = sleepObj.sleepQuality;
     dailySleepHours[date] = [hours, quality];
   });
-
   return dailySleepHours;
 };
 
@@ -81,7 +80,6 @@ const getWeeklySleepQuality = (userID, endDate, dataSet) => {
     const quality = sleepObj.sleepQuality;
     dailySleepQuality[date] = quality;
   });
-
   return dailySleepQuality;
 };
 
