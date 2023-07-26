@@ -1,5 +1,9 @@
 const milesWalkedOnDate = (userID, date, usersData, activityData) => {
-  const userStride = usersData.find((user) => user.id === userID).strideLength;
+  const user = usersData.find((user) => user.id === userID);
+  if (!user) {
+    return 0;
+  }
+  const userStride = user.strideLength;
   const userSteps = activityData.find(
     (activity) => activity.userID === userID && activity.date === date
   ).numSteps;
@@ -27,8 +31,4 @@ const getWeeklyStepGoals = (user, activityData) => {
   });
 };
 
-export { 
-  milesWalkedOnDate, 
-  dailyActiveMinutes, 
-  getWeeklyStepGoals 
-}
+export { milesWalkedOnDate, dailyActiveMinutes, getWeeklyStepGoals };

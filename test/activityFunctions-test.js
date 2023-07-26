@@ -12,7 +12,13 @@ describe('milesWalkedOnDate', () => {
   it('should calculate total miles walked on a date by a user', () => {
     expect(milesWalkedOnDate(userID, date, usersData, activityData)).to.equal(5.6)
   })
+
+  it('should return 0 if user does not exist', () => {
+    expect(milesWalkedOnDate(51, '2023/03/31', usersData, activityData)).to.equal(0)
+    
+  })
 })
+
 
 describe('dailyActiveMinutes', () => {
   const userID = 1;
