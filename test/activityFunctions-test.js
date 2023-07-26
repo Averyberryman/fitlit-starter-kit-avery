@@ -52,4 +52,7 @@ describe('getWeeklyStepGoals', () => {
       '2023/03/29: pass'
     ])
   })
+  it('should return [] if we don\'t have step data', () => {
+    expect(getWeeklyStepGoals(51, activityData)).to.deep.equal([])
+  })
 })

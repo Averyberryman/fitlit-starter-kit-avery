@@ -1,5 +1,4 @@
 const milesWalkedOnDate = (userID, date, usersData, activityData) => {
-  console.log('ergdgfd', usersData)
   const user = usersData.find((user) => user.id === userID);
   if (!user) {
     return 0;
@@ -27,6 +26,9 @@ const getWeeklyStepGoals = (user, activityData) => {
   const filteredActivityData = activityData.filter(
     (activity) => activity.userID === id
   );
+  if (filteredActivityData.length === 0) {
+    return []
+  }
   const lastIndex = filteredActivityData.length - 1;
   const currentWeek = filteredActivityData.splice(lastIndex - 6, lastIndex);
   return currentWeek.map((day) => {
@@ -35,5 +37,4 @@ const getWeeklyStepGoals = (user, activityData) => {
     return `${date}: ${goalIsMet ? "pass" : "fail"}`;
   });
 };
-
 export { milesWalkedOnDate, dailyActiveMinutes, getWeeklyStepGoals };
