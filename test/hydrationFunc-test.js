@@ -6,8 +6,16 @@ import { getDailyOunces, getWeeklyOunces } from '../src/hydrationFunctions';
 describe('average daily hydration', () => {
   const dataSet = sampleHydration.sampleHydrationData;
   const userID = 1
+  it('should be a function', () => {
+    expect(typeof averageDailyHydration).to.equal('function')
+  })
+
   it('should calculate average daily hydration', () => {
     expect(averageDailyHydration(userID, dataSet)).to.equal(50)
+  })
+
+  it('should return 0 if the user does not exist', () => {
+    expect(averageDailyHydration(51, dataSet)).to.equal(0)
   })
 })
 
