@@ -1,5 +1,9 @@
 const milesWalkedOnDate = (userID, date, usersData, activityData) => {
-  const userStride = usersData.find((user) => user.id === userID).strideLength;
+  const user = usersData.find((user) => user.id === userID);
+  if (!user) {
+    return 0;
+  }
+  const userStride = user.strideLength;
   const userSteps = activityData.find(
     (activity) => activity.userID === userID && activity.date === date
   ).numSteps;
@@ -8,6 +12,10 @@ const milesWalkedOnDate = (userID, date, usersData, activityData) => {
 };
 
 const dailyActiveMinutes = (userID, date, activityData) => {
+  const activity = activityData.find((activity) => activity.userID === userID && activity.date === date);
+  if (!activity) {
+    return 0;
+  }
   return activityData.find(
     (activity) => activity.userID === userID && activity.date === date
   ).minutesActive;
@@ -18,6 +26,9 @@ const getWeeklyStepGoals = (user, activityData) => {
   const filteredActivityData = activityData.filter(
     (activity) => activity.userID === id
   );
+  if (filteredActivityData.length === 0) {
+    return []
+  }
   const lastIndex = filteredActivityData.length - 1;
   const currentWeek = filteredActivityData.splice(lastIndex - 6, lastIndex);
   return currentWeek.map((day) => {
@@ -26,9 +37,4 @@ const getWeeklyStepGoals = (user, activityData) => {
     return `${date}: ${goalIsMet ? "pass" : "fail"}`;
   });
 };
-
-export { 
-  milesWalkedOnDate, 
-  dailyActiveMinutes, 
-  getWeeklyStepGoals 
-}
+export { milesWalkedOnDate, dailyActiveMinutes, getWeeklyStepGoals };

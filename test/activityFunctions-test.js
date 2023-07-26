@@ -12,7 +12,15 @@ describe('milesWalkedOnDate', () => {
   it('should calculate total miles walked on a date by a user', () => {
     expect(milesWalkedOnDate(userID, date, usersData, activityData)).to.equal(5.6)
   })
+
+  it('should return 0 if user does not exist', () => {
+    expect(milesWalkedOnDate(51, date, usersData, activityData)).to.equal(0)
+     })
+  // it('should return 0 if date does not exist', () => {
+  //   expect(milesWalkedOnDate(userID, '2023/03/32', usersData, activityData)).to.equal(0)
+  // })
 })
+
 
 describe('dailyActiveMinutes', () => {
   const userID = 1;
@@ -22,7 +30,14 @@ describe('dailyActiveMinutes', () => {
   it('should get the users active minutes', () => {
     expect(dailyActiveMinutes(userID, date, activityData)).to.equal(261)
   })
+  it('should return 0 if user does not exist', () => {
+    expect(dailyActiveMinutes(51, date, activityData)).to.equal(0)
+  })
+  it('should return 0 if date does not exist', () => {
+    expect(dailyActiveMinutes(userID, '2023/03/32', activityData)).to.equal(0)
+  })
 })
+
 
 describe('getWeeklyStepGoals', () => {
   const activityData = sampleActivity.sampleActivityData;
@@ -36,5 +51,8 @@ describe('getWeeklyStepGoals', () => {
       '2023/03/28: pass',
       '2023/03/29: pass'
     ])
+  })
+  it('should return [] if we don\'t have step data', () => {
+    expect(getWeeklyStepGoals(51, activityData)).to.deep.equal([])
   })
 })
