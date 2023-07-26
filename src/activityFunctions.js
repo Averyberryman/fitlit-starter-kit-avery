@@ -1,4 +1,5 @@
 const milesWalkedOnDate = (userID, date, usersData, activityData) => {
+  console.log('ergdgfd', usersData)
   const user = usersData.find((user) => user.id === userID);
   if (!user) {
     return 0;
@@ -12,6 +13,10 @@ const milesWalkedOnDate = (userID, date, usersData, activityData) => {
 };
 
 const dailyActiveMinutes = (userID, date, activityData) => {
+  const activity = activityData.find((activity) => activity.userID === userID && activity.date === date);
+  if (!activity) {
+    return 0;
+  }
   return activityData.find(
     (activity) => activity.userID === userID && activity.date === date
   ).minutesActive;
