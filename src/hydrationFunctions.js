@@ -1,5 +1,6 @@
 const averageDailyHydration = (userID, dataSet) => {
   const userHydration = dataSet.filter((hydroObj) => {
+    console.log("User variable", hydroObj);
     return hydroObj.userID == userID;
   });
   if (userHydration.length === 0) {
