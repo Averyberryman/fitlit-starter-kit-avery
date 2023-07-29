@@ -1,6 +1,7 @@
 // DOM MANIPULATION
 
 // IMPORTS
+import { hydroInput } from "./apiCalls"
 import {
   averageDailyHydration,
   getDailyOunces,
@@ -22,6 +23,7 @@ import { averageSteps } from "./averageSteps.js";
 import { mainData, currentUser } from "./scripts.js";
 
 // QUERY SELECTORS
+
 const userDataElement = document.querySelector(".user-data");
 const welcomeMessage = document.querySelector(".welcome-message");
 const widgets = document.querySelector(".widgets");
@@ -37,6 +39,17 @@ const milesWalked = document.querySelector(".miles-activity");
 const userMinutesActive = document.querySelector(".user-active-minutes");
 const userWeeklyStepGoal = document.querySelector(".user-weekly-step-goal");
 const generalInfo = document.querySelector(".general-info");
+const hydroButton = document.getElementById("hydroButton");
+const hydroDate = document.getElementById("hydroDate");
+const hydroOunces = document.getElementById("hydroOunces");
+
+hydroButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(currentUser);
+  hydroInput(currentUser.id, hydroDate.value, hydroOunces.value)
+  hydroDate.value = '';
+  hydroOunces.value = '';
+})
 
 // DATAMODEL
 
