@@ -20,7 +20,7 @@ export const hydroInput = (userID, date, numOunces) => {
   })
     .then((response) => response.json())
     .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+    .catch((error) => console.log('You can\'t do that!', error));
 };
 
 const sleepPromise = fetch("https://fitlit-api.herokuapp.com/api/v1/sleep")

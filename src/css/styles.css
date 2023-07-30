@@ -10,7 +10,7 @@ main {
   justify-content: space-around;
 }
 
-.user-data {
+.user-data  {
   align-items: center;
   background-color: #25272c;
   border: 3px dashed beige;
