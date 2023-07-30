@@ -59,8 +59,8 @@ const displayUserData = () => {
 };
 
 const displayUserInfo = () => {
-  userDataElement.innerHTML = `<div>${currentUser.address}
-  ${currentUser.email} ${currentUser.strideLength} feet, DSG: ${currentUser.dailyStepGoal} ${currentUser.friends.length} friends </div>`;
+  userDataElement.innerHTML = `<div>${currentUser.address} <br>
+${currentUser.email} <br> Stride: ${currentUser.strideLength} feet <br> Daily Step Goal: ${currentUser.dailyStepGoal} <br> ${currentUser.friends.length} friends </div>`;
 };
 
 const displayUserStepGoal = () => {
