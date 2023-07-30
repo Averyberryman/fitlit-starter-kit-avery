@@ -24,7 +24,7 @@ import { mainData, currentUser } from "./scripts.js";
 
 // QUERY SELECTORS
 
-const userDataElement = document.querySelector(".user-data");
+const userDataElement = document.querySelector(".user-box");
 const welcomeMessage = document.querySelector(".welcome-message");
 const widgets = document.querySelector(".widgets");
 const boxes = document.querySelector(".box");
@@ -59,7 +59,7 @@ const displayUserData = () => {
 };
 
 const displayUserInfo = () => {
-  generalInfo.innerHTML = `<div>${currentUser.address}
+  userDataElement.innerHTML = `<div>${currentUser.address}
   ${currentUser.email} ${currentUser.strideLength} feet, DSG: ${currentUser.dailyStepGoal} ${currentUser.friends.length} friends </div>`;
 };
 
