@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
   .then(response => {
     const [usersPromise, hydroPromise, sleepPromise, activityPromise] = response;
     mainData.users = usersPromise;
-    mainData.hydration = hydroPromise;
+    mainData.hydration = hydroPromise, console.log(hydroPromise);
     mainData.sleep = sleepPromise;
     mainData.activity = activityPromise;
   })
