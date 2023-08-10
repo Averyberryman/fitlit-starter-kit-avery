@@ -2,7 +2,7 @@
 
 ![Homepage display](https://user-images.githubusercontent.com/123911665/254100504-fa312855-ecad-435c-a4a1-393fe0a6e0d4.png)
 )
-
+## Project Link: https://averyberryman.github.io/fitlit-starter-kit-avery/
 ## Installation Instructions:
 
 [FITLIT](https://github.com/Marisa5280/fitlit-starter-kit.git) if you would like to build your own version, you can clone the repository to your local machine as follows:
